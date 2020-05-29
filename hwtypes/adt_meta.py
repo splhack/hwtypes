@@ -413,7 +413,7 @@ def __init__(self, {type_sig}):
         base = _get_tuple_base(bases)[tuple(idx.values())]
         return (*bases, base)
 
-    def _name_from_idx(cls, idx):
+    def _name_cb(cls, idx):
         return '{}[{{{}}}]'.format(cls.__name__, ', '.join(f"'{k}': {t.__name__}" for k, t in idx.items()))
 
     def _fields_from_idx(cls, idx):
